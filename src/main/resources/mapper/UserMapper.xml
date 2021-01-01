@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.coke.dao.UserDao">
+<!--    根据用户id查找用户信息-->
+<select id="getUser" parameterType="java.lang.Integer" resultType="com.example.coke.enity.user">
+    select * from user where user_id=#{userId};
+</select>
+
+    <!--    根据用户名查找用户信息-->
+    <select id="getUserByName" parameterType="java.lang.String" resultType="com.example.coke.enity.user">
+        select * from user where username=#{username};
+    </select>
+
+<!--    更改用户信息-->
+    <update id="alterUserName" parameterType="com.example.coke.enity.user">
+        update user set
+        username=#{username},
+        address=#{address},
+        user_number=#{user_number},
+        question=#{question},
+        answer=#{answer},
+        money=#{money},
+        photo=#{photo}
+        where user_id=#{user_id};
+    </update>
+
+</mapper>
+

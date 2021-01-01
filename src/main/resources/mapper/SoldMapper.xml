@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.coke.dao.SoldDao">
+
+    <!--    根据用户id查找购买表里的商品-->
+    <select id="getsold" parameterType="java.lang.Integer" resultType="com.example.coke.enity.sold">
+        select * from sold where user_id=#{user_id};
+    </select>
+
+    <!--根据售出记录表主键sold_id删除售出记录-->
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from sold where sold_id = #{sold_id};
+    </delete>
+
+</mapper>
+

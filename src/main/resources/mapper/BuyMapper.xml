@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.coke.dao.BuyDao">
+
+    <!--    购买商品，将对应商品加入到购买表中-->
+    <insert id="bought" parameterType="com.example.coke.enity.buy">
+        insert into
+            buy(user_id,goods_id,goods_name,unit_price,amount,price,picture,buydate)
+        values (#{user_id},#{goods_id},#{goods_name},#{unit_price},
+                #{amount},#{price},#{picture},#{buydate})
+    </insert>
+
+    <!--    根据用户id查找购买表里的商品-->
+    <select id="buygoods" parameterType="java.lang.Integer" resultType="com.example.coke.enity.buy">
+        select * from buy where user_id=#{user_id};
+    </select>
+
+    <!--    购买商品后修改商品表的onsale字段为0（商品下架）-->
+    <update id="takeoff" parameterType="java.lang.Integer">
+        update goods set
+        onsale=0
+        where id=#{id};
+    </update>
+
+    <!--根据购买记录表主键car_id删除商品-->
+    <delete id="deletegoods" parameterType="java.lang.Integer">
+        delete from buy where buy_id = #{buy_id};
+    </delete>
+
+    <!--    用户购买成功后将商品信息加入到卖家的售出表中-->
+    <insert id="addsold" parameterType="com.example.coke.enity.sold">
+        insert into
+            sold(user_id,goods_id,goods_name,unit_price,amount,price,picture,solddate)
+        values (#{user_id},#{goods_id},#{goods_name},#{unit_price},
+                #{amount},#{price},#{picture},#{solddate})
+    </insert>
+
+</mapper>
+

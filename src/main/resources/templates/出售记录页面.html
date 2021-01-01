@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>出售记录页面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/出售记录页面.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="name"><img src="/image/xishi.png" style="width: 150px;height: 150px;margin-top: 50px" /></div>
+        <a th:href="@{/user/person(username=${username})}">
+            <input type="button" class="exit" value="退出">
+        </a>
+        <a th:href="@{/sell/goods}">
+            <input type="button" class="sell" value="出售商品">
+        </a>
+        <!-- 商品 -->
+        <div class="product">
+            <!-- 商品1 -->
+            <div class="product1" th:each="sold:${soldrecord}">
+                <div class="date">
+                    <span th:text="${sold.getSolddate()}">
+                    </span>
+                </div>
+                <img th:src="${sold.getPicture()}" alt="">
+                <div class="describe">
+                    <span th:text="${sold.getGoods_name()}">
+                    </span>
+                </div>
+                <div class="grade1">
+                    <span th:text="${sold.getUnit_price()}">
+                    </span>
+                </div>
+                <div class="grade2">
+                    <span th:text="${sold.getAmount()}">
+                    </span>
+                </div>
+                <div class="grade3">
+                    <span th:text="${sold.getPrice()}">
+                    </span>
+                </div>
+                <a th:href="@{/sold/delete(sold_id=${sold.getSold_id()},user_id=${sold.getUser_id()})}">
+                    <button class="delete">移除</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="/js/出售记录页面.js"></script>
+</body>
+
+</html>

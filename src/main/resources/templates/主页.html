@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="二手,华侨大学,白鹭">
+    <title>白鹭二手</title>
+    <link rel="stylesheet" href="/css/主页.css">
+</head>
+
+<body>
+<!--退出登录-->
+<form method="POST" th:action="@{/logout}" id="logoutForm">
+    <input type="submit" class="Logout" value="注销"/>
+</form>
+
+<div class="father">
+    <div class="one">
+        <!--白鹭二手-->
+        <div class="name"><img src="/image/xishi.png" style="width: 150px;height: 150px;" /></div>
+        <!--            &lt;!&ndash;登录&ndash;&gt;-->
+        <!--            <a th:href="@{/user/person(userId=2)}"><input type="button" class="load" value="登录" style="display: block;" id="load"></a>-->
+        <!--            &lt;!&ndash;注册&ndash;&gt;-->
+        <!--            <input type="button" class="register" onclick="login()" value="注册" style="display: block;" id="login">-->
+
+        <!--个人中心，用a标签跳转到返回个人中心的controller层(username=${getUserByName})为参数-->
+        <a th:href="@{/user/person(username=${getUserByName})}">
+            <input type="button" class="home" value="个人中心" style="display: block;" id="center">
+        </a>
+        <!--搜索框-->
+        <div class="box">
+            <form method="post" th:action="@{/zhuye}">
+                <!--                    用name=InputField将搜索框参数传递到Controller层，对应controller层的@RequestParam注解-->
+                <input type="text" class="InputField" name="InputField" id="InputField" placeholder="搜索商品">
+                <button type="submit" class="InputBox" name="InputBox" id="InputBox">搜索</button>
+            </form>
+        </div>
+    </div>
+    <div class="two">
+        <!--分类模块,跳转到分类页面，1、2、3为参数（硬编码）-->
+        <a th:href="@{/zhuye/fenlei/1}">
+            <div class="A1" onclick="skip()">男装
+                <span class="ripple"></span>
+            </div>
+        </a>
+        <a th:href="@{/zhuye/fenlei/2}">
+            <div class="A1" onclick="skip()">女装
+                <span class="ripple"></span>
+            </div>
+        </a>
+        <a th:href="@{/zhuye/fenlei/3}">
+            <div class="A1" onclick="skip()">箱包
+                <span class="ripple"></span>
+            </div>
+        </a>
+        <a th:href="@{/zhuye/fenlei/4}">
+            <div class="A1" onclick="skip()">
+                美妆/个人护理
+                <span class="ripple"></span>
+            </div>
+        </a>
+        <a th:href="@{/zhuye/fenlei/5}">
+            <div class="A1" onclick="skip()">饰品
+                <span class="ripple"></span>
+            </div>
+        </a>
+
+        <a th:href="@{/zhuye/fenlei/6}">
+            <div class="A1" onclick="skip()">
+                手机/数码/电脑办公
+                <span class="ripple"></span>
+            </div>
+        </a>
+        <a th:href="@{/zhuye/fenlei/7}">
+            <div class="A1" onclick="skip()">
+                零食/进口食品
+                <span class="ripple"></span>
+            </div>
+        </a>
+        <a th:href="@{/zhuye/fenlei/8}">
+            <div class="A1" onclick="skip()">水果
+                <span class="ripple"></span>
+            </div>
+        </a>
+        <a th:href="@{/zhuye/fenlei/9}">
+            <div class="A1" onclick="skip()">
+                电脑/电脑配件
+                <span class="ripple"></span>
+            </div>
+        </a>
+        <a th:href="@{/zhuye/fenlei/10}">
+            <div class="A1" onclick="skip()">家具
+                <span class="ripple"></span>
+            </div>
+        </a>
+
+        <a th:href="@{/zhuye/fenlei/11}">
+            <div class="A1" onclick="skip()">家纺/家饰
+                <span class="ripple"></span>
+            </div>
+        </a>
+        <a th:href="@{/zhuye/fenlei/12}">
+            <div class="A1" onclick="skip()">医药保健
+                <span class="ripple"></span>
+            </div>
+        </a>
+        <a th:href="@{/zhuye/fenlei/13}">
+            <div class="A1" onclick="skip()">收纳/厨具
+                <span class="ripple"></span>
+            </div>
+        </a>
+        <a th:href="@{/zhuye/fenlei/14}">
+            <div class="A1" onclick="skip()">图书
+                <span class="ripple"></span>
+            </div>
+        </a>
+        <a th:href="@{/zhuye/fenlei/15}">
+            <div class="A1" onclick="skip()">音像
+                <span class="ripple"></span>
+            </div>
+        </a>
+    </div>
+</div>
+<script src="/js/主页.js">
+</script>
+</body>
+
+</html>

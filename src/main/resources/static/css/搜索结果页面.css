@@ -1,0 +1,306 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+.father{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.navigation{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    background-color: rgb(38, 74, 75);
+    z-index: 10;
+}
+.back{
+    height: 80px;
+    width: 120px;
+    border: none;
+    background-color: unset;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    outline: none;
+    color: white;
+
+}
+.back:hover{
+    background-color: rgba(44, 44, 44, 0.89);
+}
+.home{
+    height: 80px;
+    width: 120px;
+    border: none;
+    background-color: unset;
+    position: absolute;
+    left: 130px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    outline: none;
+    margin-top: -40px;
+}
+.home:hover{
+    background-color: rgba(44, 44, 44, 0.89);
+}
+.box{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    position: absolute;
+    left: 320px;
+    background-color: rgba(224, 224, 224, 0.699);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
+}
+.box-1{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    position: absolute;
+    left: 320px;
+    background-color: rgba(224, 224, 224, 0.699);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
+    animation: longer 1s;
+    animation-fill-mode: forwards;
+}
+.box-2{
+    width: 450px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    position: absolute;
+    left: 320px;
+    background-color: rgba(224, 224, 224, 0.699);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
+    animation: shoter 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes shoter{
+   from{
+       width: 450px;
+   }
+    to{
+        width: 50px;
+    }
+}
+@keyframes longer{
+    from{
+        width: 50px;
+    }
+    to{
+        width: 450px;
+    }
+}
+.InputField{
+    width: 400px;
+    height: 50px;
+    background-color: unset;
+    position: absolute;
+    left: 30px;
+    top: 0;
+    border: none;
+    outline: none;
+    font-size: 17px;
+}
+.InputBox{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 1px;
+    top: 1px;
+    border-radius: 25px;
+    background-color: white;
+    font-size: 14px;
+    border: 3px white solid;
+    outline: none;
+}
+.InputBox-1{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 1px;
+    top: 1px;
+    border-radius: 25px;
+    background-color: white;
+    font-size: 14px;
+    border: 3px white solid;
+    animation: go 1s;
+    animation-fill-mode: forwards;
+    outline: none;
+}
+.InputBox-2{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 1px;
+    top: 1px;
+    border-radius: 25px;
+    background-color: white;
+    font-size: 14px;
+    border: 3px white solid;
+    animation: back 1s;
+    animation-fill-mode: forwards;
+    outline: none;
+}
+@keyframes go{
+    from{
+        left: 1px;
+        rotate: 0deg;
+    }
+    to{
+        left: 401px;
+        rotate: 360deg;
+    }
+}
+@keyframes back{
+    from{
+        left: 401px;
+        rotate: 360deg;
+    }
+    to{
+        left: 1px;
+        rotate: 0deg;
+    }
+}
+.one1{
+    width: 100%;
+    height: 857px;
+    margin-top: 80px;
+    background-image: url("../image/bg9.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    position: fixed;
+}
+.one{
+    width: 100%;
+    height: 857px;
+    position: absolute;
+    top: 80px;
+}
+.D1{
+    margin: auto;
+    width: 1440px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.A1{
+    width: 250px;
+    height: 361px;
+    margin-left: 53px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    background: rgba(17, 17, 17, 0.753);
+    position: relative;
+    box-shadow: 0 5px 5px 0 black;
+    overflow: hidden;
+    animation: appear 2s;
+    animation-fill-mode: forwards;
+
+}
+@keyframes appear{
+    from{
+        filter: opacity(0);
+    }
+    to{
+        filter: opacity(1);
+    }
+}
+
+.A11{
+    width: 250px;
+    height: 361px;
+    z-index: -1;
+    border: none;
+}
+.sanjiao{
+    width: 0px;
+    border-width: 90px 125px 90px 125px;
+    border-style: solid;
+    position: absolute;
+    top: 360px;
+    border-color: transparent rgba(206, 206, 206, 0.877) rgb(206, 206, 206, 0.877) transparent;
+
+}
+.sanjiao-1{
+    width: 0px;
+    border-width: 90px 125px 90px 125px;
+    border-style: solid;
+    position: absolute;
+    top: 360px;
+    border-color: transparent rgba(206, 206, 206, 0.877) rgb(206, 206, 206, 0.877) transparent;
+    animation: sanjiao-up 0.8s;
+    animation-fill-mode: forwards;
+
+}
+.sanjiao-2{
+    width: 0px;
+    border-width: 90px 125px 90px 125px;
+    border-style: solid;
+    position: absolute;
+    top: 180px;
+    border-color: transparent rgba(206, 206, 206, 0.877) rgb(206, 206, 206, 0.877) transparent;
+    animation: sanjiao-down 0.8s;
+    animation-fill-mode: forwards;
+
+}
+@keyframes sanjiao-up{
+    from{
+        top: 360px;
+    }
+    to{
+        top:180px;
+    }
+}
+@keyframes sanjiao-down{
+    from{
+        top: 180px;
+    }
+    to{
+        top:360px;
+    }
+}
+.A12{
+    position: absolute;
+    top: 40px;
+    left: -140px;
+    width: 242px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 20px;
+}
+.A13{
+    width: 60px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    top: -20px;
+    left: 40px;
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.coke.dao.GoodsDao">
+<!--    搜索（根据商品描述查找商品）-->
+    <select id="searchGoods" parameterType="java.lang.String" resultType="com.example.coke.enity.goods">
+        select * from goods where goods.name like concat("%",#{searchWords},"%") and goods.onsale=1;
+    </select>
+
+
+<!--    分类（根据商品分类查找商品）-->
+    <select id="Type" parameterType="java.lang.String" resultType="com.example.coke.enity.goods">
+        select * from goods where goods.type=#{type} and goods.onsale=1;
+    </select>
+
+<!--    根据id查找商品信息-->
+    <select id="goodsDetail" parameterType="java.lang.Integer" resultType="com.example.coke.enity.goods">
+        select * from goods where goods.id = #{id} and goods.onsale=1;
+    </select>
+
+    <!--    添加出售商品-->
+    <insert id="addGoods" parameterType="com.example.coke.enity.goods">
+        insert into
+            goods(name,type,oldPrice,newPrice,sellerId,amount,picture,buyYear,buyMonth,buyDay,sellerWords,onsale)
+        values (#{name},#{type},#{oldPrice},#{newPrice},#{sellerId},#{amount},#{picture},#{buyYear},#{buyMonth},#{buyDay},#{sellerWords},#{onsale})
+    </insert>
+
+</mapper>
+

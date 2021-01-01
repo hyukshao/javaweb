@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<script src="/js/登录.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/登录.css">
+</head>
+
+<body>
+<div class="screen">
+	<div class="title">
+		<img src="/image/xishi.png" style="width: 150px;height: 150px;" />
+	</div>
+	<div class="table">
+		<form method="post" th:action="@{/login}" id="loginForm">
+			<div class="item" style="position: absolute;top: 150px;left: 100px;">
+				<input type="text" class="username" name="username" id="username" required>
+				<label for="">用户名</label>
+			</div>
+
+			<div class="item" style="position: absolute;top: 260px;left: 100px;">
+				<input type="password" class="password" name="password" id="password" required>
+				<label for="">密码</label>
+			</div>
+			<button type="submit" value="登录"  class="submit">登录
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<a th:href="@{/register}" class="href">注册</a>
+		</form>
+	</div>
+</div>
+
+
+
+</body>
+
+</html>

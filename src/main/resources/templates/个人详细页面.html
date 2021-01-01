@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>个人详细页面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/个人详细页面.css">
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="bg" id="bg">
+<a th:href="@{/user/person(username=${username})}">
+    <button>退出</button>
+</a>
+            <!--        <form th:action="@{/user/alter/(id=${getUser.getUserId()})}" method="post">-->
+            <!-- 头像 -->
+            <div class="photo-border" id="photo-border">
+                <div class="photo">
+                    <img th:src="@{'/picture/'+${getUser.getPhoto()}}">
+                </div>
+            </div>
+            <!--  用户名-->
+            <div class="name" id="name">
+                <div class="name2" th:text="${getUser.getUsername()}"></div>
+            </div>
+
+            <!-- 地址 -->
+            <div class="address" id="address">
+                <div class="address2" th:text="${getUser.getAddress()}"></div>
+            </div>
+            <div class="more" onclick="more()" id="more">
+                ↓
+            </div>
+            <!-- 已卖出宝贝数量 -->
+            <div class="sold" id="sold">
+                <div class="sold1"> 已卖出好物数量：</div>
+                <div class="sold2" th:text="${getUser.getSold()}"></div>
+            </div>
+
+            <!-- 已购买宝贝数量 -->
+            <div class="buy" id="buy">
+                <div class="buy1"> 已购买好物数量：</div>
+                <div class="buy2" th:text="${getUser.getBuy()}"></div>
+            </div>
+
+            <!-- 综合信用评分 -->
+            <div class="grade" id="grade">
+                <div class="grade1"> 综合信用评分：</div>
+                <div class="grade2" th:text="${getUser.getCredit()}"></div>
+            </div>
+
+            <!-- 是否已实名认证： -->
+            <div class="realname" id="realname">
+                <div class="realname1"> 是否已实名认证：</div>
+                <div class="realname2" th:text="${getUser.isReal_name()}"></div>
+            </div>
+
+            <!-- 电话号码 -->
+            <div class="number" id="number">
+                <div class="number1"> 电话号码：</div>
+                <div class="number2" th:text="${getUser.getUser_number()}"></div>
+            </div>
+            <a th:href="@{/user/alter/(id=${getUser.getUser_id()})}"><button class="name3" id="name3-1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    修改信息</button></a>
+            <a th:href="@{/user/person(username=${getUser.getUsername()})}">
+            <button class="exit">退出</button>
+            </a>
+            <!--        </form>-->
+        </div>
+    </div>
+    <script src="/js/个人详细页面.js"></script>
+</body>
+
+</html>

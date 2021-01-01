@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分类</title>
+    <link rel="stylesheet" href="/bootstrap-css/bootstrap.min.css">
+    <script src="/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+    <script src="/bootstrap-js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/分类页面.css">
+</head>
+
+<body>
+<div class="father">
+    <div class="navigation">
+        <!--返回-->
+<!--        <input type="button" class="back" onclick="back()" value="返回" />-->
+       <a th:href="@{/zhuye}">
+           <input type="button" class="back" onclick="back()" value="返回" />
+       </a>
+        <!--个人中心-->
+        <a th:href="@{/user/person(username=${username})}">
+            <input type="button" class="home" value="个人页面" id="center" />
+        </a>
+        <div class="box" id="box">
+            <form method="post" th:action="@{/zhuye}">
+                <input type="text" class="InputField" name="InputField" id="InputField" placeholder="搜索商品"
+                       required />
+                <button type="submit" class="InputBox" name="InputBox" id="InputBox"><img src="/image/放大镜.png"
+                                                                                          style="margin-left: -6px;margin-top: -1px;"></button>
+            </form>
+        </div>
+        <input type="button" class="B1" value="价格升序" onclick="one()">
+        <input type="button" class="B2" value="价格降序" onclick="three()">
+        <input type="button" class="B3" value="崭新升序" onclick="four()">
+        <input type="button" class="B4" value="崭新降序" onclick="five()">
+    </div>
+    <div class="kuan">
+        <!-- 价格升序 -->
+        <div class="one" id="one">
+            <div class="D1" id="D1" >
+                <div class="D11" th:each="fenlei: ${fenleiGoods}" id="D11">
+                    <a th:href="@{/zhuye/fenlei/detail(id=${fenlei.getId()})}">
+                        <image class="D111" th:src="${fenlei.getPicture()}" id="D111"></image>
+                        <div class="sanjiao" id="sanjiao">
+                            <div class="D112">
+                                <p style="margin-left: auto;"><span th:text="${fenlei.getName()}"></span></p>
+                            </div>
+                            <div class="D113">
+                                <p style="color: rgb(0, 0, 0); margin-left: auto;"><span
+                                        th:text=" ${fenlei.getNewPrice()}"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 价格降序 -->
+        <div class="three" id="three">
+            <div class="D1">
+                <div class="D11" th:each="fenlei: ${fenleiGoods}" id="D21">
+                    <a th:href="@{/zhuye/fenlei/detail(id=${fenlei.getId()})}">
+                        <image class="D111" th:src="${fenlei.getPicture()}" id="D211"></image>
+                        <div class="sanjiao" id="sanjiao2">
+                            <div class="D112">
+                                <p style="margin-left: auto;"><span th:text="${fenlei.getName()}"></span></p>
+                            </div>
+                            <div class="D113">
+                                <p style="color: rgb(0, 0, 0); margin-left: auto;"><span
+                                        th:text=" ${fenlei.getNewPrice()}"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 崭新升序 -->
+        <div class="four" id="four">
+            <div class="D1" >
+                <div class="D11" th:each="fenlei: ${fenleiGoods}" id="D31">
+                    <a th:href="@{/zhuye/fenlei/detail(id=${fenlei.getId()})}">
+                        <image class="D111" th:src="${fenlei.getPicture()}" id="D311"></image>
+                        <div class="sanjiao" id="sanjiao3">
+                            <div class="D112">
+                                <p style="margin-left: auto;"><span th:text="${fenlei.getName()}"></span></p>
+                            </div>
+                            <div class="D113">
+                                <p style="color: rgb(0, 0, 0); margin-left: auto;"><span
+                                        th:text=" ${fenlei.getNewPrice()}"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 崭新降序 -->
+        <div class="five" id="five">
+            <div class="D1" >
+                <div class="D11" th:each="fenlei: ${fenleiGoods}" id="D41">
+                    <a th:href="@{/zhuye/fenlei/detail(id=${fenlei.getId()})}">
+                        <image class="D111" th:src="${fenlei.getPicture()}" id="D411"></image>
+                        <div class="sanjiao" id="sanjiao4">
+                            <div class="D112">
+                                <p style="margin-left: auto;"><span th:text="${fenlei.getName()}"></span></p>
+                            </div>
+                            <div class="D113">
+                                <p style="color: rgb(0, 0, 0); margin-left: auto;"><span
+                                        th:text=" ${fenlei.getNewPrice()}"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/分类页面.js"></script>
+</body>
+
+</html>

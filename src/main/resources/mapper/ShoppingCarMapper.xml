@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.coke.dao.ShoppingCarDao">
+    <!--    加入购物车（将对应商品加入到购物车中）-->
+    <insert id="addGoods" parameterType="com.example.coke.enity.shoppingCar">
+    insert into
+        shoppingCar(goods_id,goods_name,onsale,unit_price,amount,price,user_id,picture)
+         values (#{goods_id},#{goods_name},#{onsale},#{unit_price},#{amount},#{price},#{user_id},#{picture})
+    </insert>
+
+<!--    根据商品id查找购物车中的商品-->
+    <select id="findGoods" parameterType="java.lang.Integer" resultType="com.example.coke.enity.shoppingCar">
+        select * from shoppingcar where goods_id = #{goods_id};
+    </select>
+
+    <!--    根据用户id查找购物车中的商品-->
+    <select id="findGoodsByuser" parameterType="java.lang.Integer" resultType="com.example.coke.enity.shoppingCar">
+        select * from shoppingcar where user_id = #{user_id} and onsale=1;
+    </select>
+
+    <!--根据购物车表主键car_id删除商品-->
+    <delete id="deleteGoods" parameterType="java.lang.Integer">
+        delete from shoppingcar where car_id = #{car_id};
+    </delete>
+
+<!--    修改购物车表-->
+    <update id="altercar" parameterType="java.lang.Integer">
+        update shoppingcar set
+                        onsale = 0
+        where goods_id =#{goods_id};
+    </update>
+</mapper>
+

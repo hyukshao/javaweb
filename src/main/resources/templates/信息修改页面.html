@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>信息修改页面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/个人信息修改页面.css">
+</head>
+
+<body>
+
+<div class="screen">
+    <div class="title">
+        <img src="/image/xishi.png" style="width: 150px;height: 150px;" />
+    </div>
+    <div class="table">
+        <form th:action="@{/user/detail2/(userId=${getUser.getUser_id()})}" method="post">
+            <div class="item" style="position: absolute;top: 70px;left: 100px;">
+                <input type="text" name="alterUserName" id="usernumber" class="usernumber"
+                       th:placeholder="${getUser.getUsername()}" />
+            </div>
+            <div class="item" style="position: absolute;top: 140px;left: 100px;">
+                <input type="text" id="pwd" class="password" name="alterUserAddress" th:placeholder="${getUser.getAddress()}"/>
+            </div>
+
+
+            <div class="item" style="position: absolute;top: 210px;left: 100px;">
+                <input type="text" id="username" class="username" name="alterUserNumber" th:placeholder="${getUser.getUser_number()}" />
+            </div>
+
+            <div class="item" style="position: absolute;top: 280px;left: 100px;">
+                <input type="text" id="add" class="add" name="alterQuestion" th:placeholder="${getUser.getQuestion()}" />
+            </div>
+
+
+            <div class="item" style="position: absolute;top: 350px;left: 100px;">
+                <input type="text"  id="question" class="question" name="alterAnswer" th:placeholder="${getUser.getAnswer()}" />
+            </div>
+
+
+            <button type="submit" class="name3">确认</button>
+
+        </form>
+        <form enctype="multipart/form-data" method="post" th:action="@{/user/alter2/(id=${getUser.getUser_id()})}">
+            <input type="file" class="photo-up" name="file"/>
+            <input type="submit" class="true-up" value="上传">
+        </form>
+
+    </div>
+    <script src="/js/个人信息修改页面.js"></script>
+</div>
+</body>
+
+</html>

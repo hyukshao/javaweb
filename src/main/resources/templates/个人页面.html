@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人页面</title>
+    <link rel="stylesheet" href="/css/个人页面.css">
+</head>
+
+<body>
+    <div class="father">
+            <a th:href="@{/zhuye}">
+                <input type="button" class="back" value="返回">
+            </a>
+            <!--退出登录-->
+        <form method="POST" th:action="@{/logout}" id="logoutForm">
+            <input type="submit" value="退出登录" class="exit"/>
+        </form>
+        <div class="mianban">
+                <a th:href="@{/user/detail(userId=${getUser.getUser_id()})}">
+                        <div class="photo">
+                            <image class="ProfilePhoto" th:src="@{'/picture/'+${getUser.getPhoto()}}"></image>
+                        </div>
+                        <div class="name">
+                            <p>用户名：</p>
+                            <div class="PetName">
+                                <p th:text="${getUser.getUsername()}"></p>
+                            </div>
+                        </div>
+                        <div class="address">
+                            <p>我的地址：</p>
+                            <div>
+                                <p th:text="${getUser.getAddress()}"></p>
+                            </div>
+                        </div>
+                 </a>
+                <div class="balance">
+                    <div class="look" id="look">查看余额：</div>
+                    <div class="money-hidden" id="money-hidden">*******</div>
+                    <div class="money" id="money">
+                        <p th:text="${getUser.getMoney()}"></p>
+                    </div>
+                </div>
+            <input type="button" value="充值" class="chizhi">
+            <a th:href="@{/shoppingCar/detail(userId=${getUser.getUser_id()})}">
+                <div  class="way1"></div>
+            </a>
+
+            <a th:href="@{/buy/page(user_id=${getUser.getUser_id()})}">
+                <div class="way2"></div>
+            </a>
+
+            <a th:href="@{/sold/record(user_id=${getUser.getUser_id()})}">
+                <div class="way3"></div>
+            </a>
+        </div>
+    </div>
+    <script src="/js/个人页面.js"></script>
+</body>
+
+</html>

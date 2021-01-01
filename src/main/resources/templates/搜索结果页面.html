@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索结果</title>
+    <link rel="stylesheet" href="/css/搜索结果页面.css">
+</head>
+
+<body>
+<div class="father">
+    <div class="navigation">
+        <!--返回-->
+        <input type="button" class="back" onclick="back()" value="返回" />
+        <!--个人中心-->
+        <a th:href="@{/zhuye}">
+            <input type="button" class="home" value="主页" id="center" />
+        </a>
+
+        <div class="box" id="box">
+            <form method="post" th:action="@{/zhuye}">
+                <input type="text" class="InputField" name="InputField" id="InputField" placeholder="搜索商品"
+                       required />
+                <button type="submit" class="InputBox" name="InputBox" id="InputBox"><img
+                        src="/image/放大镜.png" style="margin-left: -6px;margin-top: -1px;"></button>
+            </form>
+        </div>
+    </div>
+    <div style="position: relative;width: 100%;">
+        <div class="one1"></div>
+        <div class="one">
+            <div class="D1">
+                <div class="A1" th:each="search: ${searchGoods}">
+                    <a th:href="@{/zhuye/fenlei/detail(id=${search.getId()})}">
+                        <image class="A11" id="A11" th:src="${search.getPicture()}"></image>
+                        <div class="sanjiao" id="sanjiao">
+                            <div class="A12">
+                                <p style="margin-left: auto;"><span th:text="${search.getName()}"></span></p>
+                            </div>
+                            <div class="A13">
+                                <p style="color: rgb(0, 0, 0); margin-left: auto;"><span
+                                        th:text="${search.getNewPrice()}"></span></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/搜索结果页面.js"></script>
+</body>
+
+</html>

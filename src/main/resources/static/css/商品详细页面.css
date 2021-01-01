@@ -1,0 +1,615 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background-image: url("../image/bg15.jpg");
+    background-size: cover;
+
+}
+
+.navigation{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(38, 74, 75);
+    z-index: 10;
+}
+.back{
+    height: 80px;
+    width: 120px;
+    border: none;
+    background-color: unset;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    outline: none;
+    color: white;
+    top: 0px;
+
+}
+.back:hover{
+    background-color: rgba(44, 44, 44, 0.89);
+}
+.home{
+    height: 80px;
+    width: 120px;
+    border: none;
+    background-color: unset;
+    position: absolute;
+    left: 130px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    outline: none;
+    margin-top: -40px;
+}
+.home:hover{
+    background-color: rgba(44, 44, 44, 0.89);
+}
+.box{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    position: absolute;
+    left: 320px;
+    background-color: rgba(224, 224, 224, 0.699);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
+}
+.box-1{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    position: absolute;
+    left: 320px;
+    background-color: rgba(224, 224, 224, 0.699);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
+    animation: longer 1s;
+    animation-fill-mode: forwards;
+}
+.box-2{
+    width: 450px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    position: absolute;
+    left: 320px;
+    background-color: rgba(224, 224, 224, 0.699);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
+    animation: shoter 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes shoter{
+    from{
+        width: 450px;
+    }
+    to{
+        width: 50px;
+    }
+}
+@keyframes longer{
+    from{
+        width: 50px;
+    }
+    to{
+        width: 450px;
+    }
+}
+.InputField{
+    width: 400px;
+    height: 50px;
+    background-color: unset;
+    position: absolute;
+    left: 30px;
+    top: 0;
+    border: none;
+    outline: none;
+    font-size: 17px;
+}
+.InputBox{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 1px;
+    top: 1px;
+    border-radius: 25px;
+    background-color: white;
+    font-size: 14px;
+    border: 3px white solid;
+    outline: none;
+}
+.InputBox-1{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 1px;
+    top: 1px;
+    border-radius: 25px;
+    background-color: white;
+    font-size: 14px;
+    border: 3px white solid;
+    animation: go 1s;
+    animation-fill-mode: forwards;
+    outline: none;
+}
+.InputBox-2{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 1px;
+    top: 1px;
+    border-radius: 25px;
+    background-color: white;
+    font-size: 14px;
+    border: 3px white solid;
+    animation: back 1s;
+    animation-fill-mode: forwards;
+    outline: none;
+}
+@keyframes go{
+    from{
+        left: 1px;
+        rotate: 0deg;
+    }
+    to{
+        left: 401px;
+        rotate: 360deg;
+    }
+}
+@keyframes back{
+    from{
+        left: 401px;
+        rotate: 360deg;
+    }
+    to{
+        left: 1px;
+        rotate: 0deg;
+    }
+}
+.one{
+    width: 1200px;
+    height: 736px;
+    background-color: white;
+    position: absolute;
+    top: 200px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 10px black;
+}
+.one-out{
+    z-index: 1;
+    width: 1200px;
+    height: 736px;
+    background-color: white;
+    position: absolute;
+    top: 200px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 10px black;
+    animation: out 1s infinite;
+}
+.one-in{
+    z-index: 3;
+    width: 1200px;
+    height: 736px;
+    background-color: white;
+    position: absolute;
+    top: 200px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 10px black;
+    animation: in 1s infinite;
+}
+.one-2{
+    display: none;
+}
+.two{
+    display: none;
+}
+.two-out{
+    z-index: 1;
+    width: 1200px;
+    height: 736px;
+    background-color: white;
+    position: absolute;
+    top: 200px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 10px black;
+    animation: out 1s infinite;
+}
+.two-in{
+    z-index: 3;
+    width: 1200px;
+    height: 736px;
+    background-color: white;
+    position: absolute;
+    top: 200px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 10px black;
+    animation: in 1s infinite;
+}
+.two-2{
+    width: 1200px;
+    height: 736px;
+    background-color: white;
+    position: absolute;
+    top: 200px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 10px black;
+}
+@keyframes out {
+    from{
+        top:200px;
+    }
+    to{
+        top:1000px;
+    }
+}
+@keyframes in{
+    from{
+        top:1000px;
+    }
+    to{
+        top:200px;
+    }
+}
+.comment{
+    position: absolute;
+    top: 100px;
+    width: 112px;
+    height: 41px;
+    color: black;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.comments{
+    position: absolute;
+    top: 250px;
+    width: 800px;
+    height: 400px;
+    line-height: 20px;
+    background-color: rgba(198, 198, 198, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.mianban{
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.next{
+    width: 1200px;
+    height: 40px;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+    position: absolute;
+    top: 696px;
+    left: -10px;
+}
+.lunbo{
+    position: absolute;
+    left: 40px;
+    top: 70px;
+    width: 380px;
+    height: 600px;
+}
+.details{
+    position: absolute;
+    left:480px;
+    top: 70px;
+    width: 380px;
+    height: 600px;
+    line-height: 20px;
+    font-weight: 600;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+
+}
+
+.details .price1{
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+
+}
+
+.details .price2{
+    position: absolute;
+    top: 100px;
+    left: 150px;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: red;
+}
+
+.details .price3{
+    position: absolute;
+    top: 100px;
+    left: 210px;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.details .date1{
+    position: absolute;
+    top: 200px;
+    left: 50px;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.details .date2{
+    position: absolute;
+    top: 200px;
+    left: 150px;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.details .date3{
+    position: absolute;
+    left: 210px;
+     top: 200px;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.details .date4{
+    position: absolute;
+    left: 210px;
+    top: 200px;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.details .date5{
+    position: absolute;
+    left: 270px;
+    top: 200px;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.details .date6{
+    position: absolute;
+    left: 270px;
+    top: 200px;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.details .date7{
+    position: absolute;
+    left: 330px;
+    top: 200px;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.details .price4{
+    position: absolute;
+    left: 50px;
+    top: 300px;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.details .price5{
+    position: absolute;
+    left: 150px;
+    top: 300px;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.details .price6{
+    position: absolute;
+    left: 210px;
+    top: 300px;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: red;
+}
+.buyImg{
+    width: 190px;
+    height: 50px;
+    background: white;
+    border: black 1px solid;
+    position: absolute;
+    top:500px;
+    left:510px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buyImg:hover{
+    background-color: red;
+}
+.buy{
+    width: 190px;
+    height: 50px;
+    background: white;
+    border: black 1px solid;
+    position: absolute;
+    top:500px;
+    left:710px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buy:hover{
+    background-color: red;
+}
+.productName{
+    position: absolute;
+    left: 90px;
+    top: 50px;
+    width: 200px;
+    height: 41px;
+    font-size: 28px;
+    text-align: center;
+}
+.sellerContent{
+    width: 80px;
+    height: 40px;
+    color: white;
+    background-color: black;
+    outline: none;
+    border: none;
+    font-size: 10px;
+    position: absolute;
+    left: 0px;
+    top:210px;
+}
+.callContent{
+    width: 80px;
+    height: 40px;
+    color: white;
+    border: none;
+    background-color: black;
+    outline: none;
+    font-size: 10px;
+    position: absolute;
+    left: 100px;
+    top:210px;
+}
+
+
+
+
+
+.AddToCart{
+    width: 300px;
+    height: 200px;
+    border: 2px rgb(155, 155, 155) solid;
+    background-color: white;
+    border-radius: 5px;
+    position: absolute;
+    top: 450px;
+    left: 650px;
+}
+.AddToCart p{
+    position: absolute;
+    top: 60px;
+    left: 95px;
+}
+.AddToCart_btn{
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    top: 120px;
+    left: 80px;
+    background-color: white;
+}
+.No_btn{
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    top: 120px;
+    left: 160px;
+    background-color: white;
+}
+.SellerInformation{
+    width: 300px;
+    height: 200px;
+    border: 2px rgb(155, 155, 155) solid;
+    background-color: white;
+    border-radius: 5px;
+    position: absolute;
+    top: 450px;
+    left: 850px;
+}
+.WeChat{
+    position: absolute;
+    top: 60px;
+    left: 75px;
+    color: rgb(75, 75, 75);
+    margin-left: 10px;
+}
+.WeChatName{
+    position: absolute;
+    top: 60px;
+    left: 130px;
+}
+.SellerInformation_btn{
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    top: 120px;
+    left: 90px;
+    background-color: white;
+}

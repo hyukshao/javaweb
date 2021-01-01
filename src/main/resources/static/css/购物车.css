@@ -1,0 +1,203 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../image/bg19.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+    .father{
+        width: 1440px;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+        .one{
+            width: 1440px;
+            height: 243px;
+            position: relative;
+        }
+            .name{
+                height: 90px;
+                width: 90px;
+                position: absolute;
+                top: 25px;
+                left: 63px;
+                font-size: 35px;
+                text-align: center;
+            }
+            .box{
+                width: 750px;
+                height: 58px;
+                display: flex;
+                position: absolute;
+                left: 562px;
+                top: 128px;
+            }
+                .InputField{
+                    width: 309px;
+                    height: 40px;
+                    border-radius: 5px 0 0 5px;
+                    font-size: 15px;
+                    position: absolute;
+                    background-color:rgba(195,195,195,0.474) ;
+                    left: 389px;
+                    top: -20px;
+                    border: 1px white solid;
+                    padding-left: 10px;
+                }
+                .InputBox{
+                    width: 112px;
+                    height: 40px;
+                    position: absolute;
+                    left: 698px;
+                    top: -20px;
+                    border-radius: 0 5px 5px 0;
+                    background-color:rgba(195,195,195,0.474) ;
+                    font-size: 14px;
+                    color: white;
+                    border: 1px white solid;
+                    outline: none;
+                }
+                .InputBox:hover{
+                    background-color:rgba(195,195,195,0.874) ;
+                }
+        .two{
+            width: 1440px;
+            height: 500px;
+            position: relative;
+            top: 245px;
+        }
+            .slide-one{
+                width: 140px;
+                height: 70px;
+                background-color: unset;
+                border: black 1px solid;
+                border-radius: 8px;
+                font-size: 28px;
+                outline: none;
+            }
+            .slide-two{
+                width: 140px;
+                height: 70px;
+                background-color: unset;
+                border: black 1px solid;
+                border-radius: 8px;
+
+                font-size: 28px;
+                outline: none;
+            }
+            .slide-one:hover{
+                background-color: rgba(35,35,35,0.474);
+                color: white;
+            }
+            .slide-two:hover{
+                background-color: rgba(35,35,35,0.474);
+                color: white;
+            }
+            .line{
+                position: absolute;
+                left: 20px;
+                width: 1400px;
+                height: 5px;
+                background-color:rgb(136, 136, 136);
+            }
+            .carousel-indicators{
+                position: absolute;
+                left: 310px;
+                top: -11px;
+                width: 500px;
+                height: 20px;
+            }
+            .carousel-indicators .active{
+                background-color: red;
+            }
+            .commodity{
+                background-color: rgba(35,35,35,0.674);
+                box-shadow: 10px 10px 10px black;
+                width: 1400px;
+                height: 272px;
+                border: 1px rgba(35,35,35,0.474) solid;
+                margin-top: 50px;
+                position: relative;
+                color: white;
+                font-size: 20px;
+                font-weight: 600;
+            }
+            .commodity_checkbox{
+                width:30px;
+                height:30px;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+            }
+            .commodity_shop_name{
+                font-size: 20px;
+                position: absolute;
+                left: 60px;
+                top: 25px;
+            }
+            .commodity_information{
+                height:210px;
+                width:1438px;
+                margin-top:60px;
+                display: flex;
+                align-items: center;
+                font-size: 20px;
+            }
+            .commodity_image{
+                width: 200px;
+                height: 120px;
+                position: absolute;
+                left: 80px;
+            }
+            .commodity_name{
+                position: absolute;
+                left: 330px;
+            }
+            .commodity_price{
+                color: red;
+                position: absolute;
+                left: 800px;
+            }
+            .commodity_amount{
+                position: absolute;
+                left: 980px;
+            }
+            .commodity_total_price{
+                position: absolute;
+                left: 1150px;
+                color: red;
+            }
+            .commodity_remove{
+                position: absolute;
+                text-align: center;
+                font-size: 14px;
+                left: 1250px;
+                top:145px;
+                width: 80px;
+                height: 30px;
+                border: #BBBBBB 1px solid;
+                border-radius: 3px;
+                background-color: unset;
+            }
+
+            .commodity_buy{
+                position: absolute;
+                text-align: center;
+                font-size: 14px;
+                left: 1250px;
+                top:200px;
+                width: 80px;
+                height: 30px;
+                border: #BBBBBB 1px solid;
+                border-radius: 3px;
+                background-color: unset;
+            }
+            .commodity_remove:hover{
+                background-color: rgba(35,35,35,0.774);
+            }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>注册</title>
+	<link rel="stylesheet" href="/css/注册.css">
+</head>
+
+<body>
+	<div class="screen">
+		<div class="title">
+			<img src="/image/xishi.png" style="width: 150px;height: 150px;" />
+		</div>
+		<input type="button" value="返回" class="btn" onclick="skip_back()" />
+		<div class="table">
+			<form method="post" th:action="@{/register}" id="registerForm">
+				<div class="item" style="position: absolute;top: 70px;left: 100px;">
+					<input type="text" name="userNumber" id="usernumber" class="usernumber" required />
+					<label for="usernumber">身份证后6位</label>
+				</div>
+				<div class="item" style="position: absolute;top: 140px;left: 100px;">
+					<input type="text" name="password" id="pwd" class="password" required />
+					<label for="">密码</label>
+				</div>
+				<div class="item" style="position: absolute;top: 210px;left: 100px;">
+					<input type="text" name="username" id="username" class="username" required />
+					<label for="">用户名</label>
+				</div>
+				<div class="item" style="position: absolute;top: 280px;left: 100px;">
+					<input type="text" name="address" id="add" class="add" required />
+					<label for="">地址</label>
+				</div>
+				<div class="item" style="position: absolute;top: 350px;left: 100px;">
+					<input type="text" name="question" id="question" class="question" required />
+					<label for="">密保问题</label>
+				</div>
+				<div class="item" style="position: absolute;top: 420px;left: 100px;">
+					<input type="text" name="answer" id="answer" class="answer" required />
+					<label for="">密保答案</label>
+				</div>
+
+				<button type="submit" value="确定" class="submit">注册
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</form>
+		</div>
+	</div>
+	<script src="/js/注册.js"></script>
+</body>
+
+</html>

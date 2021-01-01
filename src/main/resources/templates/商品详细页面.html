@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>商品详细页面</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/商品详细页面.css">
+</head>
+
+<body>
+    <div class="navigation">
+        <a th:href="${'/zhuye/fenlei/'}+${goodsDetail.getType()}">
+            <input type="button" class="back" value="返回">
+        </a>
+        <a th:href="@{/user/person(username=${username})}">
+            <input type="button" class="home" onclick="skip_center()" value="个人中心" id="center"></a>
+        <div class="box" id="box">
+            <form method="post" th:action="@{/zhuye}">
+                <input type="text" class="InputField" name="InputField" id="InputField" placeholder="搜索商品"
+                       required />
+                <button type="submit" class="InputBox" name="InputBox" id="InputBox"><img
+                        src="/image/放大镜.png" style="margin-left: -6px;margin-top: -1px;"></button>
+            </form>
+        </div>
+    </div>
+    <div class="one" id="one">
+        <div class="mianban">
+            <div class="lunbo"> <image th:src="${goodsDetail.getPicture()}" style="    width: 380px;
+    height: 600px;"></image></div>
+            <div class="details">
+                <div class="productName"><span th:text="${goodsDetail.getName()}"></span></div>
+                <div class="price1">原价：</div>
+                <div class="price2"><span th:text="${goodsDetail.getOldPrice()}"></span></div>
+                <div class="price3">元</div>
+
+                <div class="date1">购买日期：</div>
+                <div class="date2"><span th:text="${goodsDetail.getBuyYear()}"></span></div>
+                <div class="date3">年</div>
+                <div class="date4"><span th:text="${goodsDetail.getBuyMonth()}"></span></div>
+                <div class="date5">月</div>
+                <div class="date6"><span th:text="${goodsDetail.getBuyDay()}"></span></div>
+                <div class="date7">日</div>
+
+                <div class="price4">价格：</div>
+                <div class="price5"><span th:text="${goodsDetail.getNewPrice()}"></span></div>
+                <div class="price6">元</div>
+            </div>
+            <div>
+                <div class="buyImg" onclick="AddShopping()">加入购物车</div>
+                <a th:href="@{/buy/addgoods(user_id=${addGoods.getUser_id()},goods_id=${goodsDetail.getId()},
+            goods_name=${goodsDetail.getName()},unit_price=${addGoods.getUnit_price()},amount=${addGoods.getAmount()},
+            price=${addGoods.getPrice()},picture=${goodsDetail.getPicture()})}"style="color: black;">
+                    <div class="buy">立即购买</div>
+                </a>
+            </div>
+        </div>
+        <div class="next" onclick="next_one()"></div>
+    </div>
+    <div class="two" id="two">
+        <div class="mianban">
+            <div class="comment">卖家留言</div>
+            <div class="comments">
+                <span th:text="${goodsDetail.getSellerWords()}"  style="width: 500px;height: 400px; word-break:break-all;white-space:pre-wrap; "></span>
+            </div>
+            <a th:href="@{/user/sellerDetail(userId=${goodsDetail.getSellerId()})}">
+                <input type="button" class="sellerContent" value="商家信息" />
+            </a>
+            <input  type="button" class="callContent" onclick="CellSeller()" value="联系卖家" />
+        </div>
+        <div class="next" onclick="next_two()"></div>
+    </div>
+        <div class="AddToCart" id="AddToCart" style="display: none;">
+            <p>确定加入购物车？</p>
+            <a  th:href="@{/shoppingCar/add(goods_id=${addGoods.getGoods_id()},
+            goods_name=${addGoods.getGoods_name()},onsale=${addGoods.isOnsale()},
+            unit_price=${addGoods.getUnit_price()},amount=${addGoods.getAmount()},
+            price=${addGoods.getPrice()},user_id=${addGoods.getUser_id()},picture=${addGoods.getPicture()})}" style="color: black;">
+                <input type="button" value="确定" onclick="AddToCart()" class="AddToCart_btn">
+            </a>
+                <input type="button" value="取消" onclick="AddToCart()" class="No_btn">
+        </div>
+        <div class="SellerInformation" id="SellerInformation" style="display: none;">
+            <p class="WeChat">微信:</p>
+            <p class="WeChatName">Hey-Kong--</p>
+            <input type="button" value="确定" onclick="SellerInformation()" class="SellerInformation_btn">
+        </div>
+
+    <script src="/js/商品详细页面.js"></script>
+</body>
+
+</html>

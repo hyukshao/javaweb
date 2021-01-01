@@ -1,0 +1,595 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+}
+.father{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.kuan{
+    width: 90%;
+    height: 810px;
+    position: absolute;
+    top: 120px;
+    display: flex;
+    justify-content: center;
+
+}
+.navigation{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(38, 74, 75, 0.89);
+    position: relative;
+    z-index: 10;
+}
+.back{
+    height: 80px;
+    width: 120px;
+    border: none;
+    background-color: unset;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    outline: none;
+    color: white;
+    margin-top: -40px;
+
+}
+.back:hover{
+    background-color: rgba(44, 44, 44, 0.89);
+}
+.home{
+    height: 80px;
+    width: 120px;
+    border: none;
+    background-color: unset;
+    position: absolute;
+    left: 130px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    outline: none;
+    margin-top: -40px;
+}
+.home:hover{
+    background-color: rgba(44, 44, 44, 0.89);
+}
+.box{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    position: absolute;
+    left: 320px;
+    background-color: rgba(224, 224, 224, 0.699);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
+}
+.box-1{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    position: absolute;
+    left: 320px;
+    background-color: rgba(224, 224, 224, 0.699);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
+    animation: longer 1s;
+    animation-fill-mode: forwards;
+}
+.box-2{
+    width: 450px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    position: absolute;
+    left: 320px;
+    background-color: rgba(224, 224, 224, 0.699);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
+    animation: shoter 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes shoter{
+   from{
+       width: 450px;
+   }
+    to{
+        width: 50px;
+    }
+}
+@keyframes longer{
+    from{
+        width: 50px;
+    }
+    to{
+        width: 450px;
+    }
+}
+.InputField{
+    width: 400px;
+    height: 50px;
+    background-color: unset;
+    position: absolute;
+    left: 30px;
+    top: 0;
+    border: none;
+    outline: none;
+    font-size: 17px;
+}
+.InputBox{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 1px;
+    top: 1px;
+    border-radius: 25px;
+    background-color: white;
+    font-size: 14px;
+    border: 3px white solid;
+    outline: none;
+}
+.InputBox-1{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 1px;
+    top: 1px;
+    border-radius: 25px;
+    background-color: white;
+    font-size: 14px;
+    border: 3px white solid;
+    animation: go 1s;
+    animation-fill-mode: forwards;
+    outline: none;
+}
+.InputBox-2{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 1px;
+    top: 1px;
+    border-radius: 25px;
+    background-color: white;
+    font-size: 14px;
+    border: 3px white solid;
+    animation: back 1s;
+    animation-fill-mode: forwards;
+    outline: none;
+}
+@keyframes go{
+    from{
+        left: 1px;
+        rotate: 0deg;
+    }
+    to{
+        left: 401px;
+        rotate: 360deg;
+    }
+}
+@keyframes back{
+    from{
+        left: 401px;
+        rotate: 360deg;
+    }
+    to{
+        left: 1px;
+        rotate: 0deg;
+    }
+}
+
+.B1{
+    height: 80px;
+    width: 120px;
+    border: none;
+    background-color: unset;
+    position: absolute;
+    left: 1430px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    outline: none;
+}
+.B1:hover{
+    background-color: rgba(44, 44, 44, 0.89);
+}
+.B2{
+    height: 80px;
+    width: 120px;
+    border: none;
+    background-color: unset;
+    position: absolute;
+    left: 1550px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    outline: none;
+}
+.B2:hover{
+    background-color: rgba(44, 44, 44, 0.89);
+}
+.B3{
+    height: 80px;
+    width: 120px;
+    border: none;
+    background-color: unset;
+    position: absolute;
+    left: 1670px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    outline: none;
+}
+.B3:hover{
+    background-color: rgba(44, 44, 44, 0.89);
+}
+.B4{
+    height: 80px;
+    width: 120px;
+    border: none;
+    background-color: unset;
+    position: absolute;
+    left: 1790px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    outline: none;
+}
+.B4:hover{
+    background-color: rgba(44, 44, 44, 0.89);
+}
+.one{
+    box-shadow: 15px 15px 3px  black;
+    width: 100%;
+    background-image: url("/image/bg10.jpg");
+    background-attachment: fixed;
+    background-position:center;
+    position: absolute;
+    top: 0px;
+}
+.one-1{
+    margin: 0;
+    width: 100%;
+    box-shadow: 15px 15px 3px  black;
+    background-image: url("/image/bg11.jpg");
+    background-attachment: fixed;
+    background-position:center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    display: none;
+}
+.one-in{
+    width: 100%;
+    background-image:url("/image/bg10.jpg");
+    background-attachment: fixed;
+    background-position:center;
+    background-size: cover;
+    position: absolute;
+    top: 868px;
+    animation: in 1s;
+    animation-fill-mode: forwards;
+}
+.one-out{
+    width: 100%;
+    background-image:url("/image/bg10.jpg");
+    background-attachment: fixed;
+    background-position:center;
+    background-size: cover;
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    animation:out 1s;
+    animation-fill-mode: forwards;
+}
+.three{
+    margin: 0;
+    width: 100%;
+    box-shadow: 15px 15px 3px  black;
+    background-image: url("/image/bg11.jpg");
+    background-attachment: fixed;
+    background-position:center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    display: none;
+}
+.three-in{
+    width: 100%;
+    background-image:url("/image/bg11.jpg");
+    background-attachment: fixed;
+    background-position:center;
+    background-size: cover;
+    position: absolute;
+    top: 868px;
+    animation: in 1s;
+    animation-fill-mode: forwards;
+}
+.three-out{
+    width: 100%;
+    background-image:url("/image/bg11.jpg");
+    background-attachment: fixed;
+    background-position:center;
+    background-size: cover;
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    animation:out 1s;
+    animation-fill-mode: forwards;
+}
+.four{
+    margin: 0;
+    width: 100%;
+    box-shadow: 15px 15px 3px  black;
+    background-image: url("/image/bg12.jpg");
+    background-attachment: fixed;
+    background-position:center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    display: none;
+}
+
+.four-in{
+    margin: 0;
+    width: 100%;
+
+    background-image: url("/image/bg12.jpg");
+    background-attachment: fixed;
+    background-position:center;
+    position: absolute;
+    top: 868px;
+    background-size: cover;
+    animation: 1s  in;
+    animation-fill-mode: forwards;
+}
+.four-out{
+    margin: 0;
+    width: 100%;
+
+    background-image: url("/image/bg12.jpg");
+    background-attachment: fixed;
+    background-position:center;
+    position: absolute;
+    top: 0px;
+    background-size: cover;
+    animation: 1s  out;
+    animation-fill-mode: forwards;
+}
+.five{
+    margin: 0;
+    width: 100%;
+    box-shadow: 15px 15px 3px  black;
+    background-image: url("/image/bg13.jpg");
+    background-attachment: fixed;
+    background-position:center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    display: none;
+}
+
+.five-in{
+    margin: 0;
+    width: 100%;
+
+    background-image: url("/image/bg13.jpg");
+    background-attachment: fixed;
+    background-position:center;
+    position: absolute;
+    top: 868px;
+    background-size: cover;
+    animation: 1s  in;
+    animation-fill-mode: forwards;
+}
+.five-out{
+    margin: 0;
+    width: 100%;
+    background-image: url("/image/bg13.jpg");
+    background-attachment: fixed;
+    background-position:center;
+    position: absolute;
+    top: 0px;
+    background-size: cover;
+    animation: 1s  out;
+    animation-fill-mode: forwards;
+}
+@keyframes in{
+    from{
+        top:868px;
+        width: 120%;
+        filter: brightness(0.1);
+        z-index: 10;
+        box-shadow: 200px 5px 8px  black;
+
+
+    }
+    to{
+        top:0px;
+        width: 100%;
+        filter: brightness(1);
+        z-index: 8;
+        box-shadow: 15px 15px 3px  black;
+
+    }
+}
+@keyframes out{
+    from{
+        top:0px;
+        width: 100%;
+        filter: brightness(1);
+        z-index: 8;
+        background-attachment: scroll;
+        box-shadow: 15px 15px 3px  black;
+    }
+
+    to{
+        top:868px;
+        width: 60%;
+        filter: brightness(0.1);
+        z-index: 5;
+        background-attachment: scroll;
+        box-shadow: 0px 0px 0px  black;
+    }
+}
+.huadongup{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: unset;
+    border: 2px white solid;
+    position: absolute;
+    top: 330px;
+    left: 50px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+}
+
+.huadongdown{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: unset;
+    border: 2px white solid;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 430px;
+    left: 50px;
+    color: white;
+    font-size: 30px;
+    z-index: 5;
+}
+.D1{
+    margin: auto;
+    width: 1440px;
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+.D11{
+    width: 250px;
+    height: 361px;
+    margin-left: 88px;
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0.753);
+    position: relative;
+    box-shadow: 0 5px 5px 0 black;
+    overflow: hidden;
+    animation: appear 2s;
+    animation-fill-mode: forwards;
+
+}
+@keyframes appear{
+    from{
+        filter: opacity(0);
+    }
+    to{
+        filter: opacity(1);
+    }
+}
+
+.D111{
+    width: 250px;
+    height: 361px;
+    border: none;
+}
+.D111:hover+.sanjiao{
+    animation: sanjiao-up 0.8s;
+    animation-fill-mode: forwards;
+}
+
+.sanjiao{
+    width: 0px;
+    border-width: 90px 125px 90px 125px;
+    border-style: solid;
+    position: absolute;
+    top: 360px;
+    border-color: transparent rgba(206, 206, 206, 0.877) rgba(206, 206, 206, 0.877) transparent;
+
+}
+.sanjiao-1{
+    width: 0px;
+    border-width: 90px 125px 90px 125px;
+    border-style: solid;
+    position: absolute;
+    top: 360px;
+    border-color: transparent rgba(206, 206, 206, 0.877) rgba(206, 206, 206, 0.877) transparent;
+    animation: sanjiao-up 0.8s;
+    animation-fill-mode: forwards;
+
+}
+.sanjiao-2{
+    width: 0px;
+    border-width: 90px 125px 90px 125px;
+    border-style: solid;
+    position: absolute;
+    top: 180px;
+    border-color: transparent rgba(206, 206, 206, 0.877) rgba(206, 206, 206, 0.877) transparent;
+    animation: sanjiao-down 0.8s;
+    animation-fill-mode: forwards;
+
+}
+@keyframes sanjiao-up{
+    from{
+        top: 360px;
+    }
+    to{
+        top:180px;
+    }
+}
+@keyframes sanjiao-down{
+    from{
+        top: 180px;
+    }
+    to{
+        top:360px;
+    }
+}
+.D112{
+    position: absolute;
+    top: 40px;
+    left: -140px;
+    width: 242px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 20px;
+}
+.D113{
+    width: 60px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    top: -20px;
+    left: 40px;
+}

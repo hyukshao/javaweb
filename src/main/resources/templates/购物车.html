@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <link href="/bootstrap-css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/购物车.css">
+    <script src="/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+    <script src="/bootstrap-js/bootstrap.min.js"></script>
+    <script src="/js/购物车.js"></script>
+</head>
+
+<body>
+    <div class="father">
+        <div class="one">
+            <!--白鹭二手-->
+            <div class="name"><img src="/image/xishi.png" style="width: 150px;height: 150px;" /></div>
+            <div class="box">
+                <form method="post" th:action="@{/zhuye}">
+                    <!--                    用name=InputField将搜索框参数传递到Controller层，对应controller层的@RequestParam注解-->
+                    <input type="text" class="InputField" name="InputField" id="InputField" placeholder="搜索商品">
+                    <button type="submit" class="InputBox" name="InputBox" id="InputBox">搜索</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="two">
+            <div style="position: absolute;left: 1140px;">
+                <input type="button" value="退出" onclick="skip_back()"
+                    style="background-color: #98DAFF;width: 103px;height: 39px;color: white;border-radius: 4px;border: none;outline: none;">
+<!--                <input type="button" value="结算"-->
+<!--                    style="background-color: #FF5353;width: 103px;height: 39px;color: white;border-radius: 4px;border: none;outline: none;">-->
+            </div>
+            <!-- 控制按钮 -->
+            <div>
+                <input type="button" class="slide-one" value="全部">
+                <input type="button" class="slide-two" value="已下架">
+            </div>
+            <!--轮播-->
+            <div id="myCarousel" class="carousel slide" style="width: 1440px;" data-ride="false">
+                <!--指示点-->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"
+                        style="width:100px;height:5px;margin-left:30px;border:none"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"
+                        style="width:100px;height:5px;margin-left:30px;border:none">
+                    </li>
+                </ol>
+                <div class="line"></div>
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner" style="width: 1440px;">
+                    <!--轮播项目一号-->
+                    <div class="item active" style="width: 1440px;">
+                        <form role="form" style="width: 1440px;">
+                            <!--标注-->
+                            <div
+                                style="display: flex;align-items: center;width: 1440px;height: 80px;position: relative;font-size: 20px;">
+                                <p style="position: absolute;left: 260px;top: 30px;font-size: 25px;font-weight: 600;">商品信息</p>
+                                <p style="position: absolute;left: 790px;top: 30px;font-size: 25px;font-weight: 600;">单价</p>
+                                <p style="position: absolute;left: 970px;top: 30px;font-size: 25px;font-weight: 600;">数量</p>
+                                <p style="position: absolute;left: 1140px;top: 30px;font-size: 25px;font-weight: 600;">金额</p>
+                            </div>
+                            <div>
+<!--                                循环商品列表-->
+                                <div class="commodity" th:each="car:${goods}">
+                                    <input type="checkbox" class="commodity_checkbox">
+                                    <p class="commodity_shop_name" th:text="${car.getUser_id()}"></p>
+                                    <div class="commodity_information">
+                                        <image class="commodity_image" th:src="${car.getPicture()}">
+                                        </image>
+                                        <p class="commodity_name" th:text="${car.getGoods_name()}"></p>
+                                        <p class="commodity_price" th:text="${car.getUnit_price()}"></p>
+                                        <p class="commodity_amount" th:text="${car.getAmount()}"></p>
+                                        <p class="commodity_total_price" th:text="${car.getPrice()}"></p>
+<!--                                        删除购物车商品-->
+                                        <a th:href="@{/shoppingCar/delete(car_id=${car.getCar_id()},user_id=${car.getUser_id()})}" style="color: white">
+                                            <input type="button" value="移除" class="commodity_remove">
+                                        </a>
+                                        <a th:href="@{/shoppingCar/buy(car_id=${car.getCar_id()},user_id=${car.getUser_id()},goods_id=${car.getGoods_id()},
+            goods_name=${car.getGoods_name()},unit_price=${car.getUnit_price()},amount=${car.getAmount()},
+            price=${car.getPrice()},picture=${car.getPicture()})}">
+                                        <input type="button" value="购买" class="commodity_buy">
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+
+                    <!--轮播项目二号-->
+                    <div class="item" style="width: 1440px; ">
+                        <form role="form" style="width: 1440px;">
+                            <!--标注-->
+                            <div
+                                style="display: flex;align-items: center;width: 1440px;height: 80px;position: relative;font-size: 20px;">
+                                <input type="checkbox" style="width:30px;height:30px;position: absolute;left: 20px;">
+                                <p style="position: absolute;left: 60px;top: 30px;">全选</p>
+                                <p style="position: absolute;left: 260px;top: 30px;">商品信息</p>
+                                <p style="position: absolute;left: 790px;top: 30px;">单价</p>
+                                <p style="position: absolute;left: 970px;top: 30px;">数量</p>
+                                <p style="position: absolute;left: 1140px;top: 30px;">金额</p>
+                            </div>
+                            <div>
+                                <div class="commodity">
+                                    <input type="checkbox" class="commodity_checkbox">
+                                    <p class="commodity_shop_name">见福</p>
+                                    <div class="commodity_information">
+                                        <image class="commodity_image" src="../image/QQ图片20191006224304.jpg">
+                                        </image>
+                                        <p class="commodity_name">五成新/被咬一口的蟹黄堡（肉饼还在）</p>
+                                        <p class="commodity_price">8.1</p>
+                                        <p class="commodity_amount">1</p>
+                                        <p class="commodity_total_price">8.1</p>
+                                        <input type="button" value="移除" class="commodity_remove">
+                                    </div>
+                                </div>
+                                <div class="commodity">
+                                    <input type="checkbox" class="commodity_checkbox">
+                                    <p class="commodity_shop_name">紫荆</p>
+                                    <div class="commodity_information">
+                                        <image class="commodity_image" src="../image/QQ图片20191006224304.jpg">
+                                        </image>
+                                        <p class="commodity_name">九成新/掺了机油的海草汁</p>
+                                        <p class="commodity_price">8.1</p>
+                                        <p class="commodity_amount">1</p>
+                                        <p class="commodity_total_price">8.1</p>
+                                        <input type="button" value="移除" class="commodity_remove">
+                                    </div>
+                                </div>
+                                <div class="commodity">
+                                    <input type="checkbox" class="commodity_checkbox">
+                                    <p class="commodity_shop_name">夕拾自营</p>
+                                    <div class="commodity_information">
+                                        <image class="commodity_image" src="../image/QQ图片20191006224304.jpg">
+                                        </image>
+                                        <p class="commodity_name">河豚干</p>
+                                        <p class="commodity_price">8.1</p>
+                                        <p class="commodity_amount">1</p>
+                                        <p class="commodity_total_price">8.1</p>
+                                        <input type="button" value="移除" class="commodity_remove">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
